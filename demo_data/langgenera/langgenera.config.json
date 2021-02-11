@@ -1,0 +1,10 @@
+{
+  "output_path": "_site",
+  "title": "CSVDeploy demo - LangGenera",
+  "description": "A demo site for the `csvdeploy` project.",
+  "author": "Tiago Tresoldi",
+  "favicon": "https://clts.clld.org/clld-static/images/favicon.ico",
+  "mainlink": "https://static-cldf.netlify.com",
+  "citation": "Tresoldi, Tiago (2021). CSVDeploy demo, LangGenera.",
+  "source": "langgenera.tsv"
+}

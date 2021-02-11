@@ -24,9 +24,6 @@ class TestCSVDeploy(unittest.TestCase):
     def test_dummy(self):
         assert 1 == 1
 
-    def test_library(self):
-        assert csvdeploy.dummy_func() == 42
-
 
 if __name__ == "__main__":
     # Explicitly creating and running a test suite allows to profile it

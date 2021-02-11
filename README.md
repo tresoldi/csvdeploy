@@ -9,6 +9,8 @@ based on tabular data following [csvw](the https://www.w3.org/TR/tabular-data-pr
 from W3C. It intended as a solution for simple websites requiring almost no configuration and
 which can be served on cheap or free hosting services: out goal is to have a tool that is
 as "plug-and-play" as possible, and which can be configured for continuous integration.
+Simple things should be simple, and hard things should be possible -- as long as they
+don't steep the learning curve.
 
 ## Installation and usage
 
