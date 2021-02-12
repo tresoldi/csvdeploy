@@ -109,6 +109,4 @@ def render_site(data, replaces, tables, config):
     build_tables(data, replaces, tables, template_env, config)
 
     # Build SQL query page
-
-
-#    build_sql_page(data, replaces, template_env, config)
+    # build_sql_page(data, replaces, template_env, config)
