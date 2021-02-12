@@ -6,31 +6,24 @@ from . import common
 
 
 # TODO: fix navigation bar
+# TODO: have a common signature for all functions
 
 
-def build_tables(data, replaces, template_env, config):
+def build_tables(data, replaces, tables, template_env, config):
     # TODO: fitting the data to the what is expected by the template
-    fields = [
-        "GLOTTOCODE",
-        "NAME",
-        "ISO_CODE",
-        "LATITUDE",
-        "LONGITUDE",
-        "GLOTTOLOG_FAMILY",
-        "TRESOLDI_GENUS",
-    ]
+    fields = config["single_table"]
 
     rows = []
     for row in data["single"]:
         subrow = [{"value": row[field], "url": None} for field in fields]
         rows.append(subrow)
 
-    table_data = {"columns": fields, "rows": rows}
+    table_data = {"columns": [{"name": field} for field in fields], "rows": rows}
 
     for table in data:
         table_replaces = replaces.copy()
         table_replaces["datatable"] = table_data
-        build_html(template_env, table_replaces, f"{table}.html", config)
+        build_html(template_env, table_replaces, tables, f"{table}.html", config)
 
 
 def build_sql_page(data, replaces, template_env, config):
@@ -72,15 +65,10 @@ def build_css(template_env, replaces, config):
         handler.write(source)
 
 
-def build_html(template_env, replaces, output_file, config):
+def build_html(template_env, replaces, tables, output_file, config):
     """
     Build and write an HTML file from template and replacements.
     """
-
-    # TODO: properly build `tables`
-    tables = [
-        {"name": "Single", "url": "single.html"},
-    ]
 
     # Load proper template and apply replacements, also setting current date
     logging.info("Applying replacements to generate `%s`...", output_file)
@@ -106,18 +94,19 @@ def build_html(template_env, replaces, output_file, config):
     logging.info("`%s` wrote with %i bytes.", output_file, len(source))
 
 
-def render_site(data, replaces, config):
+# TODO: have a single argument with replaces, tables, and config
+def render_site(data, replaces, tables, config):
     # Load Jinja HTML template environment
     template_env = common.load_template_env(config)
 
     # Build and write index.html
-    build_html(template_env, replaces, "index.html", config)
+    build_html(template_env, replaces, tables, "index.html", config)
 
     # Build CSS files from template
     build_css(template_env, replaces, config)
 
     # Build tables from CLDF data
-    build_tables(data, replaces, template_env, config)
+    build_tables(data, replaces, tables, template_env, config)
 
     # Build SQL query page
 

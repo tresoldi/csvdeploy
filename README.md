@@ -30,6 +30,18 @@ upload them to be served each time the raw data is changed. The instructions for
 installing and using the library will depend on the exact system you will be using,
 with the most common given in our documentation.
 
+The basic operation is to invoke the `csvdeploy` command-line tool, pointing it to
+a JSON configuration file, as in the command below using one the demo datasets
+distributed with the package:
+
+```bash
+$ csvdeploy demo_data/langgenera/langgenera.config.json
+```
+
+The exact operation of the tool will, as expected, depend on the configuration. By
+default, a new site will be generated in the `_site` directory under the path where
+it is called.
+
 ## Changelog
 
 Version 0.1:

@@ -42,17 +42,20 @@ def main():
     data = {}
     data["single"] = csvdeploy.read_data(config)
 
-    config["single_table"] = [
-        "GLOTTOCODE",
-        "NAME",
-        "ISO_CODE",
-        "LATITUDE",
-        "LONGITUDE",
-        "GLOTTOLOG_FAMILY",
-        "TRESOLDI_GENUS",
-    ]
+    # If the `config` does not specify the columns to use, use all of them
+    # TODO: move this logic to configuration reading/parsing
+    if "single_table" not in config:
+        config["single_table"] = list(data["single"][0].keys())
+
+    # Build list of table replaces (for header, mostly)
+    table_names = [key for key in config if key.endswith("_table")]
+    tables = []
+    for tname in table_names:
+        label = tname.split("_")[0]
+        tables.append({"name": label.capitalize(), "url": f"{label}.html"})
+
     # Build site
-    csvdeploy.render_site(data, replaces, config)
+    csvdeploy.render_site(data, replaces, tables, config)
 
 
 if __name__ == "__main__":
