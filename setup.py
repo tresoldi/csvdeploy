@@ -44,7 +44,7 @@ setup(
     install_requires=install_requires,
     keywords=["csv", "tsv", "tabular data", "static website", "deployment"],
     license="GNU GPL3",
-    long_description_content_type="text/x-markdown",
+    long_description_content_type="text/markdown",
     long_description=README_FILE,
     name="csvdeploy",
     packages=find_packages(where="src"),  # ["csvdeploy", "resources", "docs"],
