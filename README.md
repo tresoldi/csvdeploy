@@ -23,7 +23,7 @@ environment solution. In all cases, updating the packages used for installing li
 is also recommended whenever possible (that is, `pip install --upgrade pip setuptools wheel`).
 
 ```bash
-$ pip install deploycsv
+$ pip install csvdeploy
 ```
 
 In most situations, however, you will probably want to use the library automatically in
