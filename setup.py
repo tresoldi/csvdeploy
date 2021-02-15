@@ -49,7 +49,7 @@ setup(
     name="csvdeploy",
     packages=find_packages(where="src"),  # ["csvdeploy", "resources", "docs"],
     package_dir={"": "src"},  # , "resources":"..", "docs":".."},
-    #project_urls={"Documentation": "https://malign.readthedocs.io"},
+    python_requires=">=3.7",
     test_suite="tests",
     tests_require=[],
     url="https://github.com/tresoldi/csvdeploy",
