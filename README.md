@@ -1,5 +1,8 @@
 # csvdeploy
 
+[![PyPI](https://img.shields.io/pypi/v/csvdeploy.svg)](https://pypi.org/project/csvdeploy)
+![CodeQL](https://github.com/tresoldi/csvdeploy/workflows/CodeQL/badge.svg)
+
 Python package for deploying tabular data files (csvw) as static websites with continuous integration
 
 ## Introduction
