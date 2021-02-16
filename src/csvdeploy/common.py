@@ -103,9 +103,11 @@ def load_template_env(config):
     return template_env
 
 
-def read_data(config):
-    # TODO: currently only working with no metadata...
+def read_pure_data(config):
     source_file = config["base_path"] / config["source"]
     data = read_plain_csv(source_file, delimiter="\t")
 
     return data
+
+def read_csvw_data(config):
+    pass

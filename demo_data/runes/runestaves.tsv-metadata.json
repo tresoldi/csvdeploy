@@ -1,0 +1,43 @@
+{
+  "@context": "http://www.w3.org/ns/csvw",
+  "tables": [
+    {
+      "url": "calendars.tsv",
+      "dialect": {
+        "quoteChar": null,
+        "delimiter": "\t",
+        "trim": false,
+        "header": false,
+        "skipRows": 1
+      },
+      "tableSchema": {
+        "columns": [
+          {
+            "name": "id"
+          },
+          {
+            "name": "institute"
+          },
+          {
+            "name": "town"
+          },
+          {
+            "name": "socken"
+          },
+          {
+            "name": "harad"
+          },
+          {
+            "name": "diocese"
+          },
+          {
+            "name": "shape"
+          },
+          {
+            "name": "year"
+          }
+        ]
+      }
+    }
+  ]
+}

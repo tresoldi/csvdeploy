@@ -40,7 +40,7 @@ def main():
     # Read the data
     # TODO: fix for multiple tables and metadata
     data = {}
-    data["single"] = csvdeploy.read_data(config)
+    data["single"] = csvdeploy.read_pure_data(config)
 
     # If the `config` does not specify the columns to use, use all of them
     # TODO: move this logic to configuration reading/parsing
